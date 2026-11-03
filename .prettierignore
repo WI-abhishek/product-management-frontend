@@ -1,0 +1,21 @@
+# Build outputs
+dist
+
+# Dependencies
+node_modules
+
+# Public static assets (HTML templates managed manually)
+public/html
+
+# Environment files
+.env
+.env.*
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Misc
+*.log
+.DS_Store

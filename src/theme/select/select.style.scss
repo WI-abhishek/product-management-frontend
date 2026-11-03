@@ -1,0 +1,133 @@
+@import "../../constants/color.constants.css";
+
+.theme-select-box {
+  position: relative;
+  display: flex;
+  width: 100%;
+
+  &.direction-column {
+    flex-direction: column;
+  }
+
+  &.direction-row {
+    flex-direction: row;
+    align-items: first baseline;
+  }
+
+  .label {
+    color: var(--primary-font);
+  }
+
+  .input-field-box {
+    display: flex;
+    align-items: center;
+    height: 2.25rem;
+
+    .prefix-btn,
+    .suffix-btn {
+      background-color: var(--primary);
+      color: white;
+      height: 100%;
+      width: auto;
+    }
+
+    .input-field {
+      border: 1px solid var(--input-border-color);
+      height: 100%;
+      outline: none;
+      color: var(--input-placeholder-font-color);
+
+      .arrow-icon,
+      .cross-icon {
+        font-size: 15px;
+        color: var(--input-placeholder-font-color);
+      }
+
+      ::placeholder {
+        color: var(--input-placeholder-font-color);
+        font-weight: 600;
+        transition: padding-left 0.2s ease-in-out;
+      }
+
+      .option-selected {
+        color: black;
+        &::placeholder {
+          font-weight: 400;
+        }
+      }
+
+      &:focus-within {
+        border: 1px solid var(--primary);
+        // box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.12);
+
+        ::placeholder {
+          padding-left: 2px;
+          transition: padding-left 0.2s ease-in-out;
+        }
+
+        .arrow-icon {
+          color: var(--primary);
+          transform: rotateZ(180deg);
+        }
+      }
+
+      &.is-disabled {
+        pointer-events: none;
+        background-color: var(--disabled-btn-bg);
+      }
+
+      &.error-input {
+        border: 1px solid var(--delete-color);
+
+        &:focus-within {
+          box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+        }
+
+        .arrow-icon {
+          color: var(--delete-color);
+        }
+      }
+    }
+  }
+
+  .error {
+    color: var(--delete-color);
+  }
+}
+
+// Portal dropdown — rendered at document.body level via React Portal
+.select-dropdown {
+  background-color: white;
+  border: 1px solid var(--input-border-color);
+  border-radius: 10px;
+  box-shadow:
+    0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.06);
+  max-height: 15rem;
+  overflow-y: auto;
+  z-index: 9999;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  scrollbar-width: none;
+
+  .select-option {
+    padding: 0.75rem;
+
+    &:hover {
+      background-color: var(--table-rows-hover-bg);
+    }
+
+    &.focused {
+      background-color: var(--table-rows-hover-bg);
+    }
+
+    &.active {
+      background-color: var(--primary);
+      color: var(--white);
+      font-weight: 500;
+    }
+  }
+}

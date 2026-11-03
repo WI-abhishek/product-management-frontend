@@ -1,0 +1,119 @@
+@import "../../../constants/color.constants.css";
+
+.error-404-page {
+  background-color: var(--main-content-bg);
+
+  .error-404-illustration {
+    .error-404-number {
+      font-size: 9rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--primary);
+      letter-spacing: -0.02em;
+
+      @media (max-width: 480px) {
+        font-size: 6rem;
+      }
+    }
+  }
+
+  .error-404-cone {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 7rem;
+    height: 9rem;
+    position: relative;
+    top: 4px;
+
+    @media (max-width: 480px) {
+      width: 5rem;
+      height: 6.5rem;
+    }
+
+    .cone-body {
+      width: 0;
+      height: 0;
+      border-left: 3.5rem solid transparent;
+      border-right: 3.5rem solid transparent;
+      border-bottom: 7rem solid var(--delete-color);
+      position: relative;
+
+      @media (max-width: 480px) {
+        border-left-width: 2.5rem;
+        border-right-width: 2.5rem;
+        border-bottom-width: 5rem;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 1.6rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3.6rem;
+        height: 0.7rem;
+        background-color: var(--white);
+        border-radius: 2px;
+
+        @media (max-width: 480px) {
+          width: 2.6rem;
+          height: 0.5rem;
+          bottom: 1.1rem;
+        }
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2rem;
+        height: 0.55rem;
+        background-color: var(--white);
+        border-radius: 2px;
+
+        @media (max-width: 480px) {
+          width: 1.4rem;
+          height: 0.4rem;
+          bottom: 2.1rem;
+        }
+      }
+    }
+
+    .cone-base {
+      width: 8rem;
+      height: 0.75rem;
+      background-color: var(--delete-color);
+      border-radius: 4px;
+      margin-top: 2px;
+      opacity: 0.85;
+
+      @media (max-width: 480px) {
+        width: 5.8rem;
+        height: 0.55rem;
+      }
+    }
+  }
+
+  .error-404-btn {
+    cursor: pointer;
+    background-color: var(--primary);
+    color: var(--white);
+    box-shadow: var(--shadow-soft);
+    transform: translateY(0);
+
+    &:hover {
+      background-color: var(--dark-primary);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 100, 62, 0.35);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: var(--shadow-soft);
+    }
+  }
+}

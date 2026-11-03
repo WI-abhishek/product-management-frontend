@@ -1,0 +1,122 @@
+@import "../../constants/color.constants.css";
+
+.theme-input-box {
+  display: flex;
+  width: 100%;
+
+  .input-field-box input:-webkit-autofill,
+  .input-field-box input:-webkit-autofill:hover,
+  .input-field-box input:-webkit-autofill:focus,
+  .input-field-box input:-webkit-autofill:active {
+    // -webkit-box-shadow: 0 0 0 1000px var(--light-primary) inset !important;
+    -webkit-text-fill-color: black !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  &.direction-column {
+    flex-direction: column;
+  }
+
+  &.direction-row {
+    flex-direction: row;
+    align-items: first baseline;
+  }
+
+  .label {
+    color: var(--primary-font);
+
+    &.is-disabled {
+      pointer-events: none;
+    }
+  }
+
+  .input-field-box {
+    display: flex;
+    align-items: center;
+    height: 2.25rem;
+
+    .prefix-btn,
+    .suffix-btn {
+      background-color: var(--primary);
+      color: white;
+      height: 100%;
+      width: auto;
+    }
+
+    .prefix-show-icon,
+    .suffix-show-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--card-bg);
+      height: 100%;
+      width: auto;
+      color: var(--input-placeholder-font-color);
+      border: 1px solid var(--input-border-color);
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
+
+    &.textarea-box {
+      align-items: flex-start;
+      height: auto;
+    }
+
+    .input-field,
+    .textarea-field {
+      border: 1px solid var(--input-border-color);
+      outline: none;
+      color: black;
+
+      &.with-bg {
+        background-color: var(--card-bg);
+      }
+
+      &:focus {
+        border: 1px solid var(--primary);
+        box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.12);
+      }
+
+      &::placeholder {
+        color: var(--input-placeholder-font-color);
+        font-weight: 600 !important;
+      }
+
+      &.is-disabled {
+        pointer-events: none;
+        background-color: var(--disabled-btn-bg);
+      }
+
+      &.error-input {
+        border: 1px solid var(--delete-color);
+
+        &:focus {
+          box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+        }
+      }
+    }
+
+    .input-field {
+      height: 100%;
+    }
+  }
+
+  .error {
+    color: var(--delete-color);
+  }
+
+  .input-field::placeholder,
+  .textarea-field::placeholder {
+    transition:
+      transform 0.2s ease,
+      opacity 0.2s ease;
+  }
+
+  .input-field:focus::placeholder,
+  .textarea-field:focus::placeholder {
+    transform: translateX(5px);
+  }
+}

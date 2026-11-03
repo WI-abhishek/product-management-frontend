@@ -1,0 +1,93 @@
+@import "../../constants/color.constants.css";
+
+.theme-btn {
+  cursor: pointer;
+  background-color: var(--primary);
+  color: var(--white);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover:not(:disabled) {
+    background-color: var(--dark-primary);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.35);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0px);
+    box-shadow: var(--shadow-soft);
+  }
+
+  &.reset-btn,
+  &.outline-btn {
+    background-color: var(--white);
+    border: 1px solid var(--primary);
+    color: var(--primary);
+
+    &:hover:not(:disabled) {
+      background-color: transparent;
+      color: var(--dark-primary);
+      box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.15);
+    }
+  }
+
+  &.light-btn,
+  &.secondary-btn {
+    background-color: #f3f4f6;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+    box-shadow: none;
+
+    &:hover:not(:disabled) {
+      background-color: #e5e7eb;
+      color: #111827;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  &.indigo-btn {
+    background-color: #e0e7ff;
+    color: #4338ca;
+    border: 1px solid #c7d2fe;
+    box-shadow: none;
+
+    &:hover:not(:disabled) {
+      background-color: #c7d2fe;
+      color: #3730a3;
+      box-shadow: 0 2px 8px rgba(99, 102, 241, 0.2);
+    }
+  }
+
+  &.danger-btn {
+    background-color: #ef4444;
+    color: #ffffff;
+
+    &:hover:not(:disabled) {
+      background-color: #dc2626;
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.35);
+    }
+  }
+
+  &.success-btn {
+    background-color: #10b981;
+    color: #ffffff;
+
+    &:hover:not(:disabled) {
+      background-color: #059669;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+    }
+  }
+
+  &.btn-disabled {
+    cursor: not-allowed;
+    background-color: var(--disabled-btn-bg);
+    color: var(--disabled-btn-color);
+    transform: none;
+    box-shadow: none;
+  }
+}

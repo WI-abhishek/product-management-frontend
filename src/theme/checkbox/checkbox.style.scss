@@ -1,0 +1,58 @@
+@import "../../constants/color.constants.css";
+
+.form-checkbox {
+  .label {
+    color: var(--primary-font);
+  }
+
+  .checkbox-field {
+    appearance: none;
+    position: relative;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--checkbox-border);
+    transition: all 0.2s ease-in-out;
+    border-radius: 5px;
+    height: 18px;
+    width: 18px;
+
+    &:hover {
+      border: 1px solid var(--primary);
+      box-shadow: var(--shadow-soft);
+    }
+
+    &:checked {
+      &.checked {
+        border-color: var(--primary);
+        background-color: var(--primary);
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 5.7px;
+          top: 2.5px;
+          width: 5px;
+          height: 9px;
+          border-right: 1.8px solid white;
+          border-bottom: 1.8px solid white;
+          transform: rotate(45deg);
+        }
+      }
+
+      &.neutral {
+        border-color: var(--delete-color);
+        background-color: var(--delete-color);
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 3.5px;
+          top: 7px;
+          width: 9px;
+          border-right: 1.8px solid white;
+          border-bottom: 1.8px solid white;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import "../../../../constants/color.constants.css";
+
+.settings-pop-over {
+  .settings-pop-header {
+    background-color: var(--table-header-bg);
+
+    div {
+      .link {
+        color: var(--bold-font-color);
+      }
+
+      p {
+        color: var(--sidebar-font);
+      }
+    }
+  }
+
+  // Change Password row
+  .change-pwd-row {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+
+    .change-pwd-icon-wrap {
+      background-color: var(--light-primary);
+      color: var(--primary);
+    }
+
+    .change-pwd-label {
+      color: var(--sidebar-font);
+    }
+
+    &:hover {
+      background-color: var(--light-primary);
+      border-radius: 8px;
+
+      .change-pwd-label {
+        color: var(--primary);
+      }
+    }
+  }
+}

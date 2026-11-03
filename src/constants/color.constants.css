@@ -1,0 +1,92 @@
+:root {
+  --primary: #dc2626;
+  --primary-rgb: 220, 38, 38;
+  --light-primary: #fef2f2;
+  --dark-primary: #b91c1c;
+  --darker-primary: #991b1b;
+  --light-primary-hover: #fee2e2;
+
+  /* Typography */
+  --primary-font: #18181b;
+  --general-font-color: #777a94;
+  --bold-font-color: #09090b;
+
+  /* Base Colors */
+  --secondary: #991b1b;
+  --black: #09090b;
+  --white: #ffffff;
+
+  /* Backgrounds */
+  --bg-light-blue: #fafafa;
+  --main-content-bg: #f8fafc;
+  --sidebar: #ffffff;
+  --header: #ffffff;
+
+  /* Neutral Palette */
+  --text-gray-100: #f4f4f5;
+  --text-gray-200: #e4e4e7;
+  --text-gray-300: #d4d4d8;
+  --text-gray-500: #71717a;
+  --text-gray-600: #52525b;
+  --text-gray-700: #3f3f46;
+
+  /* Shadows */
+  --shadow: 0 0.125rem 0.5rem rgba(220, 38, 38, 0.12);
+  --shadow-soft: rgba(0, 0, 0, 0.05) 0px 1px 3px, rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  --shadow-hard: rgba(0, 0, 0, 0.12) 0px 0px 2px, rgba(0, 0, 0, 0.08) 0px 12px 24px -4px;
+  --shadow-medium: rgba(0, 0, 0, 0.08) 0px 0px 2px, rgba(0, 0, 0, 0.06) 0px 0px 12px 4px;
+
+  /* Sidebar */
+  --sidebar-font: #18181b;
+
+  /* Icons */
+  --icon-color: #71717a;
+
+  /* Status Colors */
+  --delete-color: #ef4444;
+  --light-delete-color: #fee2e2;
+  --light-delete-color2: #fef2f2;
+
+  --approve-color: #16a34a;
+  --light-approve-color: #f0fdf4;
+
+  /* Table */
+  --table-header-bg: #f4f4f5;
+  --table-rows-bg: #ffffff;
+  --table-rows-hover-bg: #fef2f2;
+  --table-img-bg: #e4e4e7;
+  --table-rows-font-color: #18181b;
+  --table-input-field: #e4e4e7;
+  --table-row-borders: #e4e4e7;
+
+  /* Cards */
+  --card-bg: #f4f4f5;
+  --card-white-bg: #ffffff;
+
+  /* Layout */
+  --layout-border-color: #e4e4e7;
+
+  /* Inputs */
+  --input-border-color: #e4e4e7;
+  --input-placeholder-font-color: #777a94;
+  --input-border-hover-color: #dc2626;
+  --checkbox-border: #dc2626;
+
+  /* Buttons */
+  --reset-bg-color: #ffffff;
+  --reset-hover-bg-color: #fef2f2;
+
+  /* Login */
+  --login-font-color: #18181b;
+
+  /* Disabled */
+  --disabled: #f4f4f5;
+  --disabled-btn-bg: #e4e4e7;
+  --disabled-btn-color: #a1a1aa;
+
+  --gray-opacity: rgba(0, 0, 0, 0.15);
+
+  /* Accent */
+  --light-pink: #fef2f2;
+  --dark-pink: #dc2626;
+}

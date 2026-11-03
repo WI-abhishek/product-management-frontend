@@ -1,0 +1,13 @@
+// .spinner-base {
+//   width: 1rem;
+//   height: 1rem;
+// }
+
+.spinner {
+  border-width: 2.2px;
+  border-style: solid;
+}
+
+.spinner.is-elastic {
+  animation-timing-function: cubic-bezier(0.53, 0.21, 0.29, 0.67);
+}

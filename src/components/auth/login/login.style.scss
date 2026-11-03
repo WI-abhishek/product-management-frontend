@@ -1,0 +1,535 @@
+@import "../../../constants/color.constants.css";
+
+/* ── Keyframe Animations ───────────────────────────── */
+@keyframes login-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes badge-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ── Root Fullscreen Container ─────────────────────── */
+.login-split-wrapper {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+/* ── Left Showcase Panel (Full-height Hero) ────────── */
+.login-showcase-panel {
+  position: relative;
+  display: none;
+  width: 52%;
+  height: 100vh;
+  height: 100svh;
+  max-height: 100vh;
+  max-height: 100svh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem 3rem;
+  background-color: #0c0a09;
+  background-image:
+    radial-gradient(circle at 15% 15%, rgba(220, 38, 38, 0.22) 0%, transparent 48%),
+    radial-gradient(circle at 85% 85%, rgba(153, 27, 27, 0.25) 0%, transparent 52%),
+    radial-gradient(circle at 50% 50%, rgba(24, 24, 27, 0.9) 0%, #09090b 100%);
+  color: var(--white);
+
+  /* Glassmorphic Auto-hide Scrollbar */
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 9999px;
+    transition: background-color 0.4s ease;
+  }
+
+  &.scrolling::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.28);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.15);
+  }
+
+  @media (min-width: 1024px) {
+    display: flex;
+  }
+
+  @media (min-width: 1440px) {
+    width: 54%;
+    padding: 3.5rem 4rem;
+  }
+
+  /* Isolated Ambient Background Container (prevents overflow scroll) */
+  .showcase-bg-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+
+    /* Subtle technical grid pattern */
+    .showcase-grid-bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.07;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* Ambient glowing blur spots */
+    .showcase-glow-orb {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      filter: blur(60px);
+      animation: pulse-glow 7s ease-in-out infinite;
+
+      &.orb-top {
+        top: -80px;
+        right: -60px;
+        background: radial-gradient(circle, rgba(220, 38, 38, 0.35) 0%, transparent 70%);
+      }
+
+      &.orb-bottom {
+        bottom: -60px;
+        left: -60px;
+        background: radial-gradient(circle, rgba(185, 28, 28, 0.3) 0%, transparent 70%);
+        animation-delay: 3.5s;
+      }
+    }
+  }
+
+  /* Top Bar with Logo */
+  .showcase-header {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .showcase-logo-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.55rem 1.15rem;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 0.875rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      backdrop-filter: blur(10px);
+
+      img {
+        height: 30px;
+        width: auto;
+        object-fit: contain;
+      }
+    }
+  }
+
+  /* Middle Showcase Content Stage */
+  .showcase-content {
+    position: relative;
+    z-index: 10;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    .showcase-headline {
+      font-size: 2.1rem;
+      font-weight: 700;
+      line-height: 1.22;
+      color: var(--white);
+      letter-spacing: -0.025em;
+
+      @media (min-width: 1280px) {
+        font-size: 2.5rem;
+      }
+
+      .text-gradient {
+        background: linear-gradient(135deg, #ffffff 30%, #fca5a5 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .text-accent {
+        color: #ef4444;
+      }
+    }
+
+    .showcase-description {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.72);
+      max-width: 480px;
+    }
+
+    /* Live Activity Indicators Row */
+    .bento-activity-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+      max-width: 480px;
+      margin-top: 0.25rem;
+
+      .activity-mini-card {
+        display: flex;
+        align-items: center;
+        gap: 0.875rem;
+        padding: 0.75rem 1rem;
+        border-radius: 0.75rem;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(8px);
+        transition:
+          border-color 0.2s ease,
+          background 0.2s ease;
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(239, 68, 68, 0.35);
+        }
+
+        .mini-icon {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 1.85rem;
+          height: 1.85rem;
+          border-radius: 0.45rem;
+          background: rgba(239, 68, 68, 0.2);
+          color: #fca5a5;
+          font-size: 0.9rem;
+          flex-shrink: 0;
+        }
+
+        .mini-text {
+          p {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: #ffffff;
+          }
+
+          span {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.55);
+          }
+        }
+      }
+    }
+  }
+
+  /* Bottom Showcase Metrics Footer */
+  .showcase-footer {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    .stats-group {
+      display: flex;
+      gap: 2.25rem;
+
+      .stat-item {
+        display: flex;
+        flex-direction: column;
+
+        .stat-value {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #ffffff;
+          letter-spacing: -0.01em;
+        }
+
+        .stat-label {
+          font-size: 0.6875rem;
+          color: rgba(255, 255, 255, 0.55);
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
+          margin-top: 0.125rem;
+        }
+      }
+    }
+
+    .footer-trust-tag {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.5);
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+  }
+}
+
+/* ── Right Interactive Form Section (Full-height Clean) ─ */
+.login-form-section {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  max-height: 100vh;
+  max-height: 100svh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2.5rem 1.5rem;
+  background-color: var(--white);
+
+  /* Glassmorphic Auto-hide Scrollbar */
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 9999px;
+    transition: background-color 0.4s ease;
+  }
+
+  &.scrolling::-webkit-scrollbar-thumb {
+    background: rgba(220, 38, 38, 0.4);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 6px rgba(220, 38, 38, 0.2);
+  }
+
+  @media (min-width: 640px) {
+    padding: 3.5rem 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    width: 48%;
+    padding: 3.5rem 4rem;
+  }
+
+  @media (min-width: 1440px) {
+    width: 46%;
+    padding: 4rem 5rem;
+  }
+
+  .login-form-container {
+    width: 100%;
+    max-width: 440px;
+    margin: auto 0;
+    animation: login-fade-up 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+/* ── Mobile Logo Header (Hidden on Desktop) ────────── */
+.login-mobile-brand {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+
+  @media (min-width: 1024px) {
+    display: none;
+  }
+
+  img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+  }
+}
+
+/* ── Candidate Segment Switcher (Sign In vs Create) ──── */
+.login-segment-switch {
+  display: flex;
+  padding: 0.25rem;
+  background-color: var(--bg-light-blue);
+  border: 1px solid var(--layout-border-color);
+  border-radius: 0.625rem;
+  margin-bottom: 1.75rem;
+
+  .segment-btn {
+    flex: 1;
+    padding: 0.5625rem 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-gray-500);
+    border-radius: 0.45rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: center;
+
+    &:hover {
+      color: var(--bold-font-color);
+    }
+
+    &.active {
+      background-color: var(--white);
+      color: var(--primary);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    }
+  }
+}
+
+/* ── Form Header Typography ─────────────────────────── */
+.login-header-group {
+  margin-bottom: 1.625rem;
+
+  h2 {
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: var(--bold-font-color);
+    letter-spacing: -0.02em;
+
+    @media (min-width: 480px) {
+      font-size: 1.875rem;
+    }
+  }
+
+  p {
+    margin-top: 0.375rem;
+    font-size: 0.875rem;
+    color: var(--general-font-color);
+    line-height: 1.5;
+  }
+}
+
+/* ── Google OAuth Button ────────────────────────────── */
+.google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  height: 2.875rem;
+  padding: 0 1rem;
+  background-color: #ffffff;
+  border: 1px solid var(--layout-border-color);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--bold-font-color);
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: var(--bg-light-blue);
+    border-color: var(--text-gray-300);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  &:active {
+    transform: scale(0.99);
+  }
+}
+
+/* ── Clean Section Divider ──────────────────────────── */
+.login-form-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1.25rem 0;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: var(--layout-border-color);
+  }
+
+  span {
+    font-size: 0.71875rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-gray-500);
+    white-space: nowrap;
+  }
+}
+
+/* ── Form Inputs Container ──────────────────────────── */
+.login-form-fields {
+  display: flex;
+  flex-direction: column;
+
+  .signup-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+
+    @media (min-width: 480px) {
+      grid-template-columns: 1fr 1fr;
+
+      .signup-col-full {
+        grid-column: span 2;
+      }
+    }
+  }
+}
+
+/* ── Bottom Switcher & Footer Notes ─────────────────── */
+.login-form-footer {
+  margin-top: 1.375rem;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--general-font-color);
+
+  .auth-switch-btn {
+    font-weight: 600;
+    color: var(--primary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    margin-left: 0.25rem;
+    transition: all 0.15s ease;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

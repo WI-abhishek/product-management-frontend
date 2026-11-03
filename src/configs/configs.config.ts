@@ -1,0 +1,61 @@
+/****************************
+ Configuration
+ ****************************/
+
+export const configuration = {
+  emailAddressPattern:
+    /^[a-z0-9!'#$%&*+\/=?^_`{|}~-]+(?:\.[a-z0-9!'#$%&*+\/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z]{2,64}$/,
+  mobileNoPattern: /^[6-9]\d{9}$/,
+  timePattern: /^[0-9]{2}[:]{1}[0-9]{2}$/,
+  imageType: /\.(jpg|JPG|jpeg|JPEG|png|PNG)$/,
+  datePattern: /^[0-9]{4}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/,
+  timeLongPattern: /^[0-9]{2}[:]{1}[0-9]{2}[:]{1}[0-9]{2}$/,
+  dateTimePattern: /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/,
+  gstNumberPattern:
+    /^([0-2][0-9]|[3][0-7])[A-Z]{3}[ABCFGHLJPTK][A-Z]\d{4}[A-Z][A-Z0-9][Z][A-Z0-9]$/,
+  panCardPattern: /^[A-Z]{3}[ABCFGHLJPTK][A-Z]\d{4}[A-Z]$/,
+  bankIfscCodePattern: /^[A-Z]{4}0[A-Z0-9]{6}$/,
+  gstNoPattern: /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/,
+  pincodePattern: /^[0-9]{6}$/,
+  editorConfig: {
+    height: 300,
+    removeButtons: ["fullsize", "about"],
+    placeholder: "",
+    buttons: [
+      "bold",
+      "italic",
+      "underline",
+      "strikethrough",
+      "|",
+      "ul",
+      "ol",
+      "|",
+      "outdent",
+      "indent",
+      "|",
+      "font",
+      "fontsize",
+      "brush",
+      "fontcolor",
+      "|",
+      "paragraph",
+      "align",
+      "|",
+      "link",
+      "image",
+      "video",
+      "|",
+      "undo",
+      "redo",
+      "|",
+      "hr",
+      "eraser",
+      "source",
+    ],
+    uploader: {
+      insertImageAsBase64URI: true,
+    },
+    showCharsCounter: false,
+    showWordsCounter: false,
+  },
+};

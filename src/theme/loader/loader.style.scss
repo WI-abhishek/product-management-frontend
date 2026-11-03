@@ -1,0 +1,25 @@
+.loader-popup-overlay {
+  z-index: 999;
+  backdrop-filter: blur(4px);
+
+  .popup-content {
+    background: transparent;
+    border: none;
+    width: auto !important;
+    min-width: auto !important;
+  }
+
+  .text-primary {
+    color: #fff !important;
+  }
+
+  .spinner-border {
+    width: 20px;
+    height: 20px;
+  }
+
+  .visually-hidden {
+    color: #fff;
+    font-weight: 500;
+  }
+}

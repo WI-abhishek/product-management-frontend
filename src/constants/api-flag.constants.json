@@ -1,0 +1,32 @@
+{
+  "userLogin": false,
+  "userRegister": false,
+  "userRefreshToken": false,
+  "userGetProfile": false,
+  "userLogout": false,
+
+  "categoryList": false,
+  "categoryAdd": false,
+  "categoryUpdate": false,
+  "categoryDelete": false,
+  "categorySelectById": false,
+  "categoryGetCategories": false,
+
+  "productList": false,
+  "productAdd": false,
+  "productUpdate": false,
+  "productStatus": false,
+  "productSelectById": false,
+  "productDelete": false,
+
+  "userForgotPassword": false,
+  "userResetPassword": false,
+  "leadList": false,
+  "leadAdd": false,
+  "leadUpdate": false,
+  "leadStatus": false,
+  "leadSelectById": false,
+  "leadSelectAll": false,
+  "leadDashboardStats": false,
+  "leadDelete": false
+}

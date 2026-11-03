@@ -1,0 +1,43 @@
+@import "../../constants/color.constants.css";
+
+.form-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  cursor: pointer;
+  appearance: none;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  --thumb-border: 3px;
+  border-radius: 8px;
+  background-color: var(--input-border-color);
+
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: var(--white);
+    left: var(--thumb-border);
+    top: var(--thumb-border);
+    height: calc(100% - (var(--thumb-border) * 2));
+    width: calc((100% / 2) - (var(--thumb-border) * 2));
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:checked {
+    background-color: var(--primary);
+
+    &::before {
+      transform: translateX(calc(100% + (var(--thumb-border) * 2)));
+    }
+  }
+
+  &:disabled::before {
+    width: calc((100% / 2) - (var(--thumb-border) * 2) - 1px);
+  }
+
+  &:disabled:checked::before {
+    transform: translateX(calc(100% + (var(--thumb-border) * 2) + 2px));
+  }
+}
