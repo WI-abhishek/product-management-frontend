@@ -109,6 +109,7 @@ export function SelectBase({
     left: number;
     width: number;
     openUpward?: boolean;
+    maxHeight?: number;
   } | null>(null);
 
   const [open, setOpen] = useState(false);
@@ -131,21 +132,6 @@ export function SelectBase({
   const [initialServerOptions, setInitialServerOptions] = useState<any[]>([]);
   const [isInitialLoaded, setIsInitialLoaded] = useState(false);
   const [staticInitialOptions, setStaticInitialOptions] = useState<any[]>([]);
-
-  const updateDropdownPosition = useCallback(() => {
-    if (inputFieldRef.current) {
-      const rect = inputFieldRef.current.getBoundingClientRect();
-      const dropdownMaxHeight = 240;
-      const spaceBelow = window.innerHeight - rect.bottom;
-      const openUpward = spaceBelow < dropdownMaxHeight && rect.top > spaceBelow;
-      setDropdownPosition({
-        top: openUpward ? rect.top + window.scrollY - 4 : rect.bottom + window.scrollY + 4,
-        left: rect.left + window.scrollX,
-        width: rect.width,
-        openUpward,
-      });
-    }
-  }, []);
 
   const loadOptions = useCallback(
     debounce(async (query: any, callback: any) => {
@@ -214,6 +200,45 @@ export function SelectBase({
     if (!typedText) return false;
     return currentOptions.length === 0;
   }, [isNewCreatable, isServerSide, serversearchText, searchText, currentOptions]);
+
+  const updateDropdownPosition = useCallback(() => {
+    if (inputFieldRef.current) {
+      const rect = inputFieldRef.current.getBoundingClientRect();
+      const measuredHeight = dropdownRef.current?.offsetHeight;
+      const estimatedHeight = Math.min(
+        240,
+        Math.max(
+          40,
+          (currentOptions?.length || 1) * 42 +
+            (isServerSide || isNewCreatable ? 45 : 8)
+        )
+      );
+      const dropdownHeight =
+        measuredHeight && measuredHeight > 20
+          ? measuredHeight
+          : estimatedHeight;
+
+      const spaceBelow = window.innerHeight - rect.bottom;
+      const spaceAbove = rect.top;
+      const openUpward =
+        spaceBelow < dropdownHeight + 10 && spaceAbove > spaceBelow;
+      const maxHeight = openUpward
+        ? Math.min(240, Math.max(80, spaceAbove - 16))
+        : Math.min(240, Math.max(80, spaceBelow - 16));
+
+      const effectiveHeight = Math.min(dropdownHeight, maxHeight);
+
+      setDropdownPosition({
+        top: openUpward
+          ? rect.top + window.scrollY - 4 - effectiveHeight
+          : rect.bottom + window.scrollY + 4,
+        left: rect.left + window.scrollX,
+        width: rect.width,
+        openUpward,
+        maxHeight,
+      });
+    }
+  }, [currentOptions?.length, isServerSide, isNewCreatable]);
 
   const resetServerState = (resetInitial = false) => {
     setServerOptions([]);
@@ -416,13 +441,17 @@ export function SelectBase({
   useEffect(() => {
     if (open) {
       updateDropdownPosition();
+      const animFrame = requestAnimationFrame(() => {
+        updateDropdownPosition();
+      });
       window.addEventListener("resize", updateDropdownPosition);
       window.addEventListener("scroll", updateDropdownPosition, true);
+      return () => {
+        cancelAnimationFrame(animFrame);
+        window.removeEventListener("resize", updateDropdownPosition);
+        window.removeEventListener("scroll", updateDropdownPosition, true);
+      };
     }
-    return () => {
-      window.removeEventListener("resize", updateDropdownPosition);
-      window.removeEventListener("scroll", updateDropdownPosition, true);
-    };
   }, [open, updateDropdownPosition]);
 
   useEffect(() => {
@@ -495,6 +524,7 @@ export function SelectBase({
                 top: dropdownPosition.top,
                 left: dropdownPosition.left,
                 width: dropdownPosition.width,
+                maxHeight: dropdownPosition.maxHeight,
               }
             : {}
         }

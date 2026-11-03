@@ -124,11 +124,7 @@ export const AddUpdateProductModal = ({
                     brand: singleData?.brand && singleData.brand !== "-" ? singleData.brand : "",
                     unit: singleData?.unit || "pcs",
                     costPrice: singleData?.costPrice != null ? singleData.costPrice : "",
-                    sellingPrice: singleData?.sellingPrice != null
-                        ? typeof singleData.sellingPrice === "string" && singleData.sellingPrice.startsWith("$")
-                            ? singleData.sellingPrice.replace("$", "")
-                            : singleData.sellingPrice
-                        : "",
+                    sellingPrice: singleData?.sellingPrice != null ? singleData.sellingPrice.replace("₹", "") : singleData.sellingPrice,
                     stockQuantity: singleData?.stockQuantity != null ? singleData.stockQuantity : 0,
                     lowStockThreshold: singleData?.lowStockThreshold != null ? singleData.lowStockThreshold : 10,
                     status: statusData.find((s: any) => s.value === singleData?.status) || {
@@ -169,7 +165,7 @@ export const AddUpdateProductModal = ({
                                 : null;
 
                     return (
-                        <Form className="flex flex-col gap-4 max-h-[75vh] overflow-y-auto pr-1">
+                        <Form className="flex flex-col gap-4">
                             <div className="flex flex-col gap-1.5">
                                 <label className="text-xs font-medium theme-bold-font-color-text">
                                     Product Image (Optional)

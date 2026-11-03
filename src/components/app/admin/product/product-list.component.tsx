@@ -65,8 +65,7 @@ export const ProductListComponent = () => {
               imageUrl: item?.imageUrl || "",
               categoryName: item?.category?.name ?? "-",
               brand: item?.brand || "-",
-              sellingPrice:
-                item?.sellingPrice != null ? `$${Number(item?.sellingPrice).toFixed(2)}` : "-",
+              sellingPrice: item?.sellingPrice != null ? `₹${Number(item?.sellingPrice).toFixed(2)}` : "-",
               createdAt: moment(item?.createdAt).format("MMM DD, YYYY, hh:mm A"),
             })) || [],
           );
