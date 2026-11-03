@@ -1,0 +1,157 @@
+%PDF-1.4
+%âãÏÓ
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [7 0 R 9 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /WinAnsiEncoding >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier /Encoding /WinAnsiEncoding >>
+endobj
+6 0 obj
+<< /Length 5094 >>
+stream
+BT /F2 16 Tf 0.1 g 1 0 0 1 50.00 786.89 Tm (PRODUCT MANAGEMENT SYSTEM) Tj ET
+BT /F1 11 Tf 0.35 g 1 0 0 1 50.00 766.89 Tm (Frontend Architecture & System Documentation) Tj ET
+0.1 G 1.2 w 50.00 754.89 m 545.28 754.89 l S
+BT /F2 11.5 Tf 0.05 g 1 0 0 1 50.00 718.89 Tm (TABLE OF CONTENTS) Tj ET
+0.75 G 0.6 w 50.00 713.89 m 545.28 713.89 l S
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 50.00 699.89 Tm (1. System Overview) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 50.00 683.89 Tm (2. Technology Stack) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 50.00 667.89 Tm (3. Core Architecture & Modules) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 50.00 651.89 Tm (4. Routing & Authentication Guard) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 50.00 635.89 Tm (5. State Management & API Layer) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 50.00 619.89 Tm (6. Reusable UI & Theme Components) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 50.00 603.89 Tm (7. Environment Configuration) Tj ET
+BT /F2 11.5 Tf 0.05 g 1 0 0 1 50.00 565.89 Tm (1. SYSTEM OVERVIEW) Tj ET
+0.75 G 0.6 w 50.00 560.89 m 545.28 560.89 l S
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 50.00 546.89 Tm (The frontend is a responsive Single Page Application \(SPA\) built for a modern Product Management ERP) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 50.00 533.89 Tm (system. It provides an intuitive interface for inventory tracking, catalog management, category) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 50.00 520.89 Tm (organization, dynamic data entry forms, server-side tables, and visual dashboard analytics.) Tj ET
+BT /F2 11.5 Tf 0.05 g 1 0 0 1 50.00 482.89 Tm (2. TECHNOLOGY STACK) Tj ET
+0.75 G 0.6 w 50.00 477.89 m 545.28 477.89 l S
+0.35 g 0.35 G 0.5 w 52.00 466.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 463.89 Tm (Framework & Language: React 19 + TypeScript) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 451.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 448.89 Tm (Build Tool: Vite) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 436.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 433.89 Tm (Styling: Tailwind CSS v4 + Sass \(SCSS modules\)) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 421.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 418.89 Tm (State Management: Redux Toolkit + Redux Persist) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 406.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 403.89 Tm (Routing: React Router DOM v7) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 391.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 388.89 Tm (Forms & Validation: Formik + Yup schema validation) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 376.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 373.89 Tm (Data Visualization: Recharts \(Donut chart, horizontal/vertical bar charts\)) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 361.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 358.89 Tm (UI Primitives & Icons: Headless UI, React Icons \(Feather & FontAwesome\)) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 346.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 343.89 Tm (Notifications: Sonner) Tj ET
+BT /F2 11.5 Tf 0.05 g 1 0 0 1 50.00 306.89 Tm (3. CORE ARCHITECTURE & MODULES) Tj ET
+0.75 G 0.6 w 50.00 301.89 m 545.28 301.89 l S
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 50.00 287.89 Tm (The application is structured into domain-specific feature modules:) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 268.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 265.89 Tm (Authentication \(/login\): Secure login screen validating credentials, saving JWT access and refresh) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 252.89 Tm (tokens into persisted state.) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 240.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 237.89 Tm (Dashboard \(/admin/dashboard\): Real-time metrics overview displaying top KPI summary cards \(Total) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 224.89 Tm (Products, Active, Categories, Low Stock, Out of Stock\), product status donut chart, top 4 categories) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 211.89 Tm (volume chart, and a responsive low-stock alerts table.) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 199.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 196.89 Tm (Product Management \(/admin/product\): Comprehensive catalog management with server-side pagination,) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 183.89 Tm (multi-column search and filters, image preview, in-row status dropdown updates, delete confirmation,) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 170.89 Tm (and dynamic add/edit modal with Cloudinary upload.) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 158.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 155.89 Tm (Category Management \(/admin/category\): Organization of product categories with paginated tables,) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 142.89 Tm (search, CRUD operations, and feeds for product dropdown selects.) Tj ET
+BT /F2 11.5 Tf 0.05 g 1 0 0 1 50.00 105.89 Tm (4. ROUTING & AUTHENTICATION GUARD) Tj ET
+0.75 G 0.6 w 50.00 100.89 m 545.28 100.89 l S
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 50.00 86.89 Tm (The routing system is organized hierarchically:) Tj ET
+0.8 G 0.5 w 50 47 m 545.28 47 l S
+BT /F1 8.5 Tf 0.45 g 1 0 0 1 50 35 Tm (Product Management System - Frontend Documentation) Tj ET
+BT /F1 8.5 Tf 0.45 g 1 0 0 1 490.28 35 Tm (Page 1 of 2) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Contents 6 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> >>
+endobj
+8 0 obj
+<< /Length 4372 >>
+stream
+0.35 g 0.35 G 0.5 w 52.00 789.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 786.89 Tm (Public Routes: Login and registration routes accessible only to unauthenticated visitors.) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 774.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 771.89 Tm (Protected Admin Routes: Wrapped inside authentication guards verifying valid session tokens in Redux) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 758.89 Tm (store. Unauthorized visits are automatically redirected to /login.) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 746.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 743.89 Tm (Navigation Layout: Shared admin shell containing a responsive collapsible sidebar, top navigation) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 730.89 Tm (bar, and breadcrumb path indicator.) Tj ET
+BT /F2 11.5 Tf 0.05 g 1 0 0 1 50.00 693.89 Tm (5. STATE MANAGEMENT & API LAYER) Tj ET
+0.75 G 0.6 w 50.00 688.89 m 545.28 688.89 l S
+0.35 g 0.35 G 0.5 w 52.00 677.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 674.89 Tm (Redux Store: Manages global user authentication state, permissions, and profile details with) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 661.89 Tm (localStorage persistence via Redux Persist.) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 649.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 646.89 Tm (Centralized API Service \(apiService\): Unified wrapper for GET, POST, PUT, DELETE, and) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 633.89 Tm (multipart/form-data requests.) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 621.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 618.89 Tm (Anti-Duplicate Protection: Tracks active API request flags to prevent duplicate or accidental) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 605.89 Tm (double-submissions.) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 593.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 590.89 Tm (Token Refresh Interceptor: Automatically handles token expiration by passing the refresh token via) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 577.89 Tm (headers to maintain seamless user sessions without logout.) Tj ET
+BT /F2 11.5 Tf 0.05 g 1 0 0 1 50.00 540.89 Tm (6. REUSABLE UI & THEME COMPONENTS) Tj ET
+0.75 G 0.6 w 50.00 535.89 m 545.28 535.89 l S
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 50.00 521.89 Tm (The application relies on a shared, modular UI component library located in src/theme:) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 502.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 499.89 Tm (Server Table \(Table\): Reusable data table supporting server-side pagination, sorting, column-level) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 486.89 Tm (search filters, image rendering, in-row action menus, and inline status dropdowns.) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 474.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 471.89 Tm (Smart Select \(SelectBase\): Custom searchable select with React Portal rendering, bound within) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 458.89 Tm (viewport limits and featuring automatic upward flip detection when bottom space is constrained.) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 446.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 443.89 Tm (Dynamic Modal \(Modal\): Accessible portal dialogs with smooth transitions for add/edit forms and) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 430.89 Tm (confirmation alerts.) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 418.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 415.89 Tm (Form Renderer \(RenderField\): JSON-driven field renderer translating schema definitions into Formik) Tj ET
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 402.89 Tm (text inputs, textareas, selects, or image uploaders.) Tj ET
+BT /F2 11.5 Tf 0.05 g 1 0 0 1 50.00 365.89 Tm (7. ENVIRONMENT CONFIGURATION) Tj ET
+0.75 G 0.6 w 50.00 360.89 m 545.28 360.89 l S
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 50.00 346.89 Tm (Required environment variables \(.env\):) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 333.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 330.89 Tm (VITE_API_URL: Base URL for backend REST API endpoints \(e.g., http://localhost:5000/api/v1/\)) Tj ET
+0.35 g 0.35 G 0.5 w 52.00 318.39 2.5 2.5 re f
+BT /F1 9.5 Tf 0.15 g 1 0 0 1 64.00 315.89 Tm (VITE_IMAGE: Base URL or CDN path for static assets and image resolution) Tj ET
+0.8 G 0.5 w 50 47 m 545.28 47 l S
+BT /F1 8.5 Tf 0.45 g 1 0 0 1 50 35 Tm (Product Management System - Frontend Documentation) Tj ET
+BT /F1 8.5 Tf 0.45 g 1 0 0 1 490.28 35 Tm (Page 2 of 2) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Contents 8 0 R /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000019 00000 n 
+0000000068 00000 n 
+0000000131 00000 n 
+0000000228 00000 n 
+0000000330 00000 n 
+0000000425 00000 n 
+0000005571 00000 n 
+0000005723 00000 n 
+0000010147 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+10299
+%%EOF
