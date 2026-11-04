@@ -56,9 +56,7 @@ type TableProps = {
   hasPagination?: boolean;
   isManagable?: boolean;
   tableName?: string;
-  rightButton?: ReactNode;
   isColumnSetting?: boolean;
-  formFilter?: ReactNode;
 };
 
 export const TableComponent = forwardRef(
@@ -91,9 +89,7 @@ export const TableComponent = forwardRef(
       hasPagination = true,
       isManagable = false,
       tableName = "",
-      rightButton,
       isColumnSetting = true,
-      formFilter,
     }: TableProps,
     ref,
   ) => {
@@ -476,8 +472,6 @@ export const TableComponent = forwardRef(
                 </div>
               )}
 
-              {formFilter && formFilter}
-
               {isColumnSetting && (
                 <div className="flex  pointer! items-center justify-center rounded-lg border border-gray-200 bg-white ms-auto">
                   <TableSettingsPopOver
@@ -500,7 +494,6 @@ export const TableComponent = forwardRef(
                 </div>
               )}
 
-              {rightButton && rightButton}
             </div>
 
             <div className="table-wrapper">
