@@ -125,10 +125,7 @@ const executeFetchWithAuth = async (
   isRetry = false,
 ): Promise<any> => {
   try {
-    const requestHeaders = { ...(options.headers || {}) };
-    delete requestHeaders.Authorization;
-    delete requestHeaders.authorization;
-    const authHeaders = getToken(requestHeaders);
+    const authHeaders = getToken(options.headers || {});
     const fullUrl = encodeURI(apiBase.apiUrl + url);
 
     const response = await fetch(fullUrl, {
@@ -138,12 +135,7 @@ const executeFetchWithAuth = async (
 
     const parsed = await responseCall(response);
 
-    if (
-      !isRetry &&
-      url !== apiBase.userLogin &&
-      url !== apiBase.userRefreshToken &&
-      response.status === 401
-    ) {
+    if (!isRetry && url !== apiBase.userLogin && response.status === 401) {
       if (!isRefreshing) {
         isRefreshing = true;
         let newToken: string | null = null;
