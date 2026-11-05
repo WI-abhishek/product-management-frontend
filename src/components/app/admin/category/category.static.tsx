@@ -25,33 +25,17 @@ export const categoryStatic = {
       label: "Category Name",
       placeholder: "Enter category name",
       fieldType: "text",
-      required: true,
+      isRequired: true
     },
     {
       name: "description",
       label: "Description",
       placeholder: "Enter category description (optional)",
       fieldType: "textarea",
-      required: false,
     },
   ],
 
   columns: [
-    {
-      isActionField: true,
-      actionList: [
-        {
-          type: "icon",
-          icon: MdOutlineEdit,
-          iconName: "edit",
-        },
-        {
-          type: "icon",
-          icon: MdOutlineDelete,
-          iconName: "delete",
-        },
-      ],
-    },
     {
       field: "row_index",
       heading: "Sr No.",
@@ -80,6 +64,21 @@ export const categoryStatic = {
       field: "createdAt",
       heading: "Created At",
       isSortable: true,
+    },
+    {
+      isActionField: true,
+      actionList: [
+        {
+          type: "icon",
+          icon: MdOutlineEdit,
+          iconName: "edit",
+        },
+        {
+          type: "icon",
+          icon: MdOutlineDelete,
+          iconName: "delete",
+        },
+      ],
     },
   ],
 };
