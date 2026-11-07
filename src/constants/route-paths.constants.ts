@@ -13,4 +13,5 @@ export enum Paths {
   category = "category",
   product = "product",
   leads = "leads",
+  store = "store",
 }

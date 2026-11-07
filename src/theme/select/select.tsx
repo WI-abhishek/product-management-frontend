@@ -641,8 +641,9 @@ export function SelectBase({
               readOnly={isReadOnly}
               inputMode={isReadOnly ? "none" : undefined}
               value={inputDisplayValue}
-              style={{ color: resolvedInputStyle.color }}
-              className={`w-full bg-transparent  outline-none ${selectedOption?.label && !isTyping && "option-selected"} ${isReadOnly ? "caret-transparent" : ""}`}
+              title={selectedOption?.label || inputDisplayValue}
+              style={{ color: resolvedInputStyle.color, textOverflow: "ellipsis" }}
+              className={`min-w-0 flex-1 truncate pe-2 bg-transparent outline-none ${selectedOption?.label && !isTyping && "option-selected"} ${isReadOnly ? "caret-transparent" : ""}`}
               placeholder={placeholder}
               onFocus={handleInputFocus}
               onChange={handleInputChange}
@@ -656,7 +657,7 @@ export function SelectBase({
                 }
               }}
             />
-            <div className="flex flex-row items-center">
+            <div className="flex flex-row items-center shrink-0 ms-1">
               {isOptionsLoading || isLoading ? (
                 <span className="me-2">
                   <Spinner isElastic />
@@ -797,7 +798,7 @@ export function SelectComponent({
   initialServerLoad = false,
   onInitialLoad,
   isReadOnly = false,
-  noFocusNext = false,
+  noFocusNext = true,
   isLoading = false,
   ...props
 }: SelectProps) {

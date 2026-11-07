@@ -36,11 +36,21 @@
       height: 100%;
       outline: none;
       color: var(--input-placeholder-font-color);
+      overflow: hidden;
+
+      input {
+        min-width: 0;
+        flex: 1 1 auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
 
       .arrow-icon,
       .cross-icon {
         font-size: 15px;
         color: var(--input-placeholder-font-color);
+        flex-shrink: 0;
       }
 
       ::placeholder {

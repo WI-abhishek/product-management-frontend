@@ -5,6 +5,7 @@ import AuthRoutes from "@/routes/auth.routes";
 import App from "@/app";
 import { useSelector } from "react-redux";
 import AdminRoutes from "./admin/admin.routes";
+import { StoreComponent } from "@/components/app/store/store.component";
 
 export default function MainRoutes() {
   const { token } = useSelector((state: any) => state[reduxName.auth]);
@@ -16,6 +17,9 @@ export default function MainRoutes() {
         <Route element={<App />}>
           {token ? (
             <>
+              {/* Standalone Storefront (Full page without header/sidebar) */}
+              <Route path={`${Paths.store}`} element={<StoreComponent />} />
+              <Route path={`${Paths.admin}/${Paths.store}`} element={<StoreComponent />} />
               {/* ADMIN PANEL */}
               <Route path={`${Paths.admin}/*`} element={<AdminRoutes />} />
               <Route

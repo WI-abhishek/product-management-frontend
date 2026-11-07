@@ -4,11 +4,13 @@ import {
   setPrimeSideBarToggler,
   setSingleSideBarToggler,
 } from "@/redux/sidebar.slice";
-import { reduxName } from "@/constants";
+import { reduxName, Paths } from "@/constants";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Popover, PopoverButton, PopoverPanel, Transition } from "@headlessui/react";
 import { SettingsPopOverContent } from "@/components/app/layout/header-popover-content/header-popover-content";
 import { CiUser } from "react-icons/ci";
+import { LuShoppingCart } from "react-icons/lu";
 import { useBreakpoint } from "@/hooks/use-breakpoint";
 import { useRole } from "@/hooks/use-role";
 import { roles } from "@/constants/role.constants";
@@ -95,6 +97,14 @@ export const HeaderComponent = () => {
           </div>
 
           <div className="flex justify-center items-center gap-4">
+            <Link
+              to={`/${Paths.store}`}
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 rounded-lg border border-indigo-200 transition-colors shadow-2xs"
+            >
+              <LuShoppingCart size={14} />
+              <span>Storefront (Add to Cart)</span>
+            </Link>
+
             <div className="flex items-center gap-3">
               <Popover className="relative">
                 <PopoverButton className="outline-none focus:outline-none">

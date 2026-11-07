@@ -24,6 +24,7 @@ export const apiBase: any = {
   productStatus: "Product/Status",
   productSelectById: "Product/SelectById/",
   productDelete: "Product/Delete/",
+  productCheckout: "Product/Checkout",
 
   // Dashboard
   dashboardStats: "Dashboard/Stats",

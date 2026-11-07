@@ -18,6 +18,7 @@
   "productStatus": false,
   "productSelectById": false,
   "productDelete": false,
+  "productCheckout": false,
 
   "userForgotPassword": false,
   "userResetPassword": false,

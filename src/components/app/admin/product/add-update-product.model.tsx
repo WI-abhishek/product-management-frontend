@@ -112,6 +112,8 @@ export const AddUpdateProductModal = ({
         if (isOpen) {
             fetchCategories();
             if (singleData?.productId) {
+                console.log("singleData.sellingPrice", singleData.sellingPrice);
+
                 setInitialValues({
                     name: singleData?.name || "",
                     sku: singleData?.sku || "",
@@ -124,7 +126,7 @@ export const AddUpdateProductModal = ({
                     brand: singleData?.brand && singleData.brand !== "-" ? singleData.brand : "",
                     unit: singleData?.unit || "pcs",
                     costPrice: singleData?.costPrice != null ? singleData.costPrice : "",
-                    sellingPrice: singleData?.sellingPrice != null ? singleData.sellingPrice.replace("₹", "") : singleData.sellingPrice,
+                    sellingPrice: singleData?.rawSellingPrice != null ? singleData.rawSellingPrice : "",
                     stockQuantity: singleData?.stockQuantity != null ? singleData.stockQuantity : 0,
                     lowStockThreshold: singleData?.lowStockThreshold != null ? singleData.lowStockThreshold : 10,
                     status: statusData.find((s: any) => s.value === singleData?.status) || {
