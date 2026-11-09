@@ -695,7 +695,7 @@ export function SelectBase({
               <span>
                 <IoIosArrowDown
                   style={{ color: open ? "var(--primary)" : resolvedInputStyle.color }}
-                  className={`arrow-icon duration-200 transition-transform ${open ? "rotate-180" : ""}`}
+                  className={`arrow-icon duration-200 transition-transform ${open ? "rotate-180" : "rotate-0"}`}
                 />
               </span>
             </div>

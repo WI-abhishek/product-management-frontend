@@ -121,7 +121,7 @@ export const modernColumns: ModernTableColumn[] = [
       }`;
       return (
         <div className="max-w-50">
-          <div className="text-sm font-extrabold text-gray-900">{row.sellingPrice}</div>
+          <div className="text-sm font-semibold text-gray-900">{row.sellingPrice}</div>
           <div className="mt-1">
             <span
               title={stockText}

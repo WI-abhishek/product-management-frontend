@@ -257,7 +257,7 @@ export const ProductListComponent = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 text-xs">
           <div className="p-3.5 bg-white rounded-xl border border-gray-200 shadow-2xs">
             <span className="text-gray-400 block font-medium">Cost Price</span>
-            <span className="font-bold text-gray-800 text-sm mt-0.5 block">
+            <span className="font-semibold text-gray-800 text-sm mt-0.5 block">
               {row.costPrice != null ? `₹${Number(row.costPrice).toFixed(2)}` : "—"}
             </span>
           </div>
